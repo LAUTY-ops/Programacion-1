@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafetería Paréntesis</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <div class="logo">☕ Paréntesis Café</div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Banner principal -->
+  <section id="inicio" class="hero">
+    <h1>Bienvenido a Paréntesis Café</h1>
+    <p>El lugar ideal para tu pausa perfecta</p>
+    <a href="#menu" class="btn">Ver Menú</a>
+  </section>
+
+  <!-- Menú -->
+  <section id="menu" class="menu">
+    <h2>Menú</h2>
+    <div class="grid">
+      <div class="item">
+        <h3>Café Espresso</h3>
+        <p>$4000</p>
+      </div>
+      <div class="item">
+        <h3>Café Americano</h3>
+        <p>$4500</p>
+      </div>
+      <div class="item">
+        <h3>Latte</h3>
+        <p>$5000</p>
+      </div>
+      <div class="item">
+        <h3>Cappuccino</h3>
+        <p>$5500</p>
+      </div>
+      <div class="item">
+        <h3>Té Negro</h3>
+        <p>$4000</p>
+      </div>
+      <div class="item">
+        <h3>Té Verde</h3>
+        <p>$4000</p>
+      </div>
+      <div class="item">
+        <h3>Chocolate Caliente</h3>
+        <p>$5500</p>
+      </div>
+      <div class="item">
+        <h3>Bagel con Queso</h3>
+        <p>$7000</p>
+      </div>
+      <div class="item">
+        <h3>Medialunas</h3>
+        <p>$1000</p>
+      </div>
+      <div class="item">
+        <h3>Brownie</h3>
+        <p>$1500</p>
+      </div>
+      <div class="item">
+        <h3>Sandwich de Pollo</h3>
+        <p>$8500</p>
+      </div>
+      <div class="item">
+        <h3>Ensalada César</h3>
+        <p>$6000</p>
+      </div>
+      <div class="item">
+        <h3>Jugo Natural</h3>
+        <p>$3000</p>
+      </div>
+    </div >
+    </div>
+  </section>
+<!-- Carrito de pedidos -->
+<section id="carrito" class="cart">
+  <h2>Pedidos Online</h2>
+  <div class="productos">
+    <div class="producto">
+      <h3>Cafe Espresso</h3>
+      <p>$4000</p>
+      <button onclick="agregarAlCarrito('Cafe Espresso', 4000)">Agregar</button>
+    </div>
+    <div class="producto">
+      <h3>Cafe Americano</h3>
+      <p>$4500</p>
+      <button onclick="agregarAlCarrito('Cafe Americano', 4500)">Agregar</button>
+    </div>
+    <div class="producto">
+      <h3>Latte</h3>
+      <p>$5000</p>
+      <button onclick="agregarAlCarrito('Latte', 5000)">Agregar</button>
+    </div>
+    <div class="producto">
+      <h3>Cappuccino</h3>
+      <p>$5500</p>
+      <button onclick="agregarAlCarrito('Cappuccino', 5500)">Agregar</button>
+    </div>
+    <div class="producto">
+      <h3>te Negro</h3>
+      <p>$4000</p>
+      <button onclick="agregarAlCarrito('Té Negro', 4000)">Agregar</button>
+    </div>
+    <div class="producto">
+      <h3>Té Verde</h3>
+      <p>$4000</p>
+      <button onclick="agregarAlCarrito('Té Verde', 4000)">Agregar</button>
+    </div>
+       <div class="producto">
+      <h3>Chocolate Caliente</h3>
+      <p>$5500</p>
+      <button onclick="agregarAlCarrito('Chocolate Caliente', 5500)">Agregar</button>
+    </div>
+    <div class="producto">
+      <h3>Bagel con Queso</h3>
+      <p>$7000</p>
+      <button onclick="agregarAlCarrito('Bagel con Queso', 7000)">Agregar</button>
+    </div>
+    <div class="producto">
+      <h3>Medialunas</h3>
+      <p>$1000</p>
+      <button onclick="agregarAlCarrito('Medialunas', 1000)">Agregar</button>
+    </div>
+    <div class="producto">
+      <h3>Brownie</h3>
+      <p>$1500</p>
+      <button onclick="agregarAlCarrito('BROWNIE', 1500)">Agregar</button>
+    </div>
+    <div class="producto">
+      <h3>Sandwich de Pollo</h3>
+      <p>$8500</p>
+      <button onclick="agregarAlCarrito('Sandwich de Pollo', 8500)">Agregar</button>
+    </div>
+    <div class="producto">
+      <h3>ensalada cesar</h3>
+      <p>$6000</p>
+      <button onclick="agregarAlCarrito('Ensalada Cesar', 6000)">Agregar</button>
+    </div>
+    <div class="producto">
+      <h3>Jugo Natural</h3>
+      <p>$3000</p>
+      <button onclick="agregarAlCarrito('Jugo Natural', 3000)">Agregar</button>
+    </div>
+  </div>
+
+  <h3>Tu pedido:</h3>
+  <ul id="lista-carrito"></ul>
+  <p>Total: $<span id="total">0</span></p>
+  <button onclick="finalizarPedido()">Finalizar Pedido</button>
+</section>
+
+  <!-- Sobre nosotros -->
+  <section id="nosotros" class="about">
+    <h2>Sobre Nosotros</h2>
+    <p>Somos una cafetería que combina café de origen con un ambiente cálido y moderno, ademas teemos variedad de comida para cualquer hora del dia . Queremos que cada visita sea un momento especial.</p>
+  </section>
+<!-- Galería -->
+<section id="galeria" class="gallery">
+  <h2>Galería</h2>
+  <div class="grid-gallery">
+    <img src="img/local1.jpg" alt="Interior de la cafetería">
+    <img src="img/local2.jpg" alt="Barista preparando café">
+    <img src="img/local3.jpg" alt="Mesa con café y medialunas">
+    <img src="img/local4.jpg" alt="Decoración del ambiente">
+  </div>
+</section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="contact">
+    <h2>Contacto</h2>
+    <p>📍 Dirección: Calle Principal 123, Santa Fe</p>
+    <p>📞 Teléfono: 3409-455205</p>
+    <p>🕒 Horarios: Lunes a Sábado 8:00 - 20:00</p>
+    <form>
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="email" placeholder="Tu correo" required>
+      <textarea placeholder="Tu mensaje"></textarea>
+      <button type="submit">Enviar</button>
+      <!-- Botón de WhatsApp -->
+<div class="whatsapp">
+  <a href="https://wa.me/5493409455205" target="_blank">
+    💬 Chatear por WhatsApp
+  </a>
+</div>
+
+    </form>
+  </section>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>© 2026 Paréntesis Café - Todos los derechos reservados</p>
+    <div class="social">
+      <a href="#">Instagram</a>  | <a href="#">Facebook</a>
+    </div>
+  </footer>
+  
+
+</body>
+</html>
+
