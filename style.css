@@ -18,7 +18,65 @@ header .logo {
   font-weight: bold;
   font-size: 1.2em;
 }
+.destacados {
+    padding: 50px 20px;
+    text-align: center;
+    background: #f8f3ee;
+}
 
+.destacados h2 {
+    color: #6f4e37;
+    margin-bottom: 30px;
+}
+
+.contenedor-destacados {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 280px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    color: #6f4e37;
+}
+
+.card p {
+    padding: 0 15px;
+}
+
+.card span {
+    display: block;
+    margin: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #25a244;
+}
+.frase {
+    text-align: center;
+    padding: 40px;
+    background: beige;
+    color: white;
+    font-style: italic;
+}
 av ul {
   list-style: none;
   display: flex;

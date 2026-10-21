@@ -27,6 +27,45 @@
     <a href="#menu" class="btn">Ver Menú</a>
   </section>
 
+<section class="destacados">
+    <h2>🌟 Productos Destacados</h2>
+
+    <div class="contenedor-destacados">
+
+        <div class="card">
+            <img src="https://www.thedailymeal.com/img/gallery/the-one-ingredient-that-will-make-or-break-your-at-home-cappuccino/l-intro-1670419517.jpg" alt="Cappuccino">
+            <h3>Cappuccino Premium</h3>
+            <p>Espuma cremosa y café de origen.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.JD1ODmQ-jkmXbaqVh9_0iQHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Medialunas">
+            <h3>Medialunas Artesanales</h3>
+            <p>Recién horneadas cada mañana.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.U8TOseZudRqo2DK8R-1cBAHaFS?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Cafe Spresso">
+            <h3>Café Spresso</h3>
+            <p>Café fuerte y aromático.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://th.bing.com/th/id/OIP.8uYQVKmWKEJJI539j0VttgHaE8?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Te negro">
+            <h3>Te Negro</h3>
+            <p>Infusión tradicional con aroma intenso.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://tse4.mm.bing.net/th/id/OIP.snKyXkA10OH7JEqAvLFOUQHaEC?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="bagel con queso">
+            <h3>Bagel con Queso</h3>
+            <p>Delicioso bagel con queso fresco.</p>
+        </div>
+    </div>
+    <div class="frase">
+    <h2>"Cada taza cuenta una historia ☕"</h2>
+</div>
+</section>
   <!-- Menú -->
   <section id="menu" class="menu">
     <h2>Menú</h2>
@@ -162,8 +201,53 @@
   <p>Total: $<span id="total">0</span></p>
   <button onclick="finalizarPedido()">Finalizar Pedido</button>
 </section>
+<script>
+  let carrito = [];
+  let total = 0;
 
-  <!-- Sobre nosotros -->
+  function agregarAlCarrito(nombre, precio) {
+    carrito.push({nombre, precio});
+    total += precio;
+    actualizarCarrito();
+  }
+
+  function actualizarCarrito() {
+    const lista = document.getElementById('lista-carrito');
+    lista.innerHTML = '';
+    carrito.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = `${item.nombre} - $${item.precio}`;
+      lista.appendChild(li);
+    });
+    document.getElementById('total').textContent = total;
+
+   
+    document.getElementById('btnPago').href = "https://mpago.la/2abcXYZ";
+  }
+
+  function finalizarPedido() {
+    if (carrito.length === 0) {
+      alert("Tu carrito está vacío.");
+      return;
+    }
+
+    // Construir mensaje con detalle del pedido
+    let mensaje = "Hola! Quiero hacer un pedido:%0A";
+    carrito.forEach(item => {
+      mensaje += `- ${item.nombre}: $${item.precio}%0A`;
+    });
+    mensaje += `Total: $${total}`;
+
+    
+    let numero = "5493409455205"; // 
+
+   
+    let url = `https://wa.me/${numero}?text=${mensaje}`;
+    window.open(url, "_blank");
+  }
+</script>
+
+  
   <section id="nosotros" class="about">
     <h2>Sobre Nosotros</h2>
     <p>Somos una cafetería que combina café de origen con un ambiente cálido y moderno, ademas teemos variedad de comida para cualquer hora del dia . Queremos que cada visita sea un momento especial.</p>
@@ -172,10 +256,8 @@
 <section id="galeria" class="gallery">
   <h2>Galería</h2>
   <div class="grid-gallery">
-    <img src="img/local1.jpg" alt="Interior de la cafetería">
-    <img src="img/local2.jpg" alt="Barista preparando café">
-    <img src="img/local3.jpg" alt="Mesa con café y medialunas">
-    <img src="img/local4.jpg" alt="Decoración del ambiente">
+    <img src="https://images.pexels.com/photos/30179490/pexels-photo-30179490/free-photo-of-interior-de-cafeteria-moderna-con-muebles-elegantes.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Interior de la cafetería">
+    <img src="https://tse2.mm.bing.net/th/id/OIP.q_-GnPvGk_96AOZbpU1LOAHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Mesa con café y medialunas">
   </div>
 </section>
 
@@ -200,7 +282,7 @@
     </form>
   </section>
 
-  <!-- Pie de página -->
+  
   <footer>
     <p>© 2026 Paréntesis Café - Todos los derechos reservados</p>
     <div class="social">
