@@ -1,23 +1,34 @@
-body {
+  body {
   font-family: Arial, sans-serif;
   margin: 0;
   background: #fdf6e3;
-  color: #333;
+  color: #111111;
+
 }
 
 header {
   background: #6f4e37;
   color: #fff;
-  padding: 15px;
+  padding: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 50 px solid #6f4e37;
+  
  }
 
 header .logo {
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 45px;
+
 }
+.btn {
+  background: #6f4e37;
+  color: beige; 
+  
+}
+
+
 .destacados {
     padding: 50px 20px;
     text-align: center;
@@ -68,7 +79,7 @@ header .logo {
     margin: 15px;
     font-size: 20px;
     font-weight: bold;
-    color: #25a244;
+  
 }
 .frase {
     text-align: center;
@@ -77,15 +88,19 @@ header .logo {
     color: white;
     font-style: italic;
 }
-av ul {
-  list-style: none;
-  display: flex;
-  gap: 15px;
+.av ul {
+list-style: none;
+display: flex;
+gap: 100px;
+
 }
 
-av a {
-  color: #fff9f9;
+.av   a {
+  color: #fff;
   text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline-block;  
 }
 
 .hero {
@@ -95,22 +110,18 @@ av a {
   color: #793f04;
 }
 
-.btn {
-  background: #6f4e37;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-}
+
 
 .menu, .about, .contact {
   padding: 40px 20px;
+  background: #fff8f0;
 }
 
 .menu .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
+  
  }
 
  .item {
